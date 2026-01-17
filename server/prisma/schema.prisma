@@ -1,0 +1,17 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model TimeEntry {
+  id          Int      @id @default(autoincrement())
+  date        String
+  project     String
+  hours       Float
+  description String
+  createdAt   DateTime @default(now())
+}
